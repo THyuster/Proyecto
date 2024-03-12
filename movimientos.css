@@ -1,0 +1,124 @@
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #f8f8f8;
+    line-height: 1.6;
+}
+
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 0;
+}
+
+nav ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    color: #666;
+    text-shadow: 1px 1px 0px #fff;
+    background: #eaebec;
+    margin: 20px 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+}
+
+h3{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+}
+
+th, td {
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+th {
+    background-color: #556270;
+    color: white;
+    text-transform: uppercase;
+}
+
+tr {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #dbdadc;
+}
+
+.alert-icon {
+    cursor: pointer;
+    color: red;
+    font-size: 20px;
+}
+
+.container {
+    width: 80%;
+    height: 800px;
+    margin: auto;
+    overflow: hidden;
+    text-align: center;
+    background-color: whitesmoke;
+}
+
+#addProductFrom {
+    display: center;
+    justify-content: center;
+}
+
+#addProductFrom label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+
+#addProductFrom input, #addProductFrom select, #addProductFrom textarea {
+    width: 70%;
+    height: 40px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+#addProductFrom button {
+    height: 50px;
+    cursor: pointer;
+    background: #333;
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+}

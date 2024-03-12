@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            background-color: #f8f8f8;
+            line-height: 1.6;
+        }
+
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 15px 0;
+        }
+
+        nav ul {
+            padding: 0;
+            list-style: none;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .add-product-form, .recent-products-list {
+            background: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .add-product-form h2, .recent-products-list h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .add-product-form form label, .add-product-form form input, .add-product-form form button {
+            display: block;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .add-product-form form label {
+            font-weight: bold;
+        }
+
+        .add-product-form form input {
+            height: 40px;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .add-product-form form button {
+            height: 50px;
+            cursor: pointer;
+            background: #333;
+            color: #fff;
+            border: 0;
+            border-radius: 5px;
+        }
+
+        .recent-products-list ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .recent-products-list ul li {
+            border-bottom: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="pagina_principal.php">Agregar Producto</a></li>
+        <li><a href="agregar_proveedor.html">Agregar Proveedor</a></li>
+        <li><a href="ver_productos.php">Ver Productos</a></li>
+        <li><a href="ver_proveedor.php">Ver Proveedores</a></li>
+        <li><a href="eliminar_producto.php">Eliminar Producto</a></li>
+        <li><a href="estadisticas.php">Estadisticas </a></li>
+        <li><a href="movimientos.php">Movimientos</a></li>
+        <li><a href="inicio_de_sesion.html">Cerrar Sesion</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <div class="add-product-form">
+        <h2>Formulario de Proveedores</h2>
+
+        <form action="insertar_proveedor.php" method="post">
+            <label for="ProveedorID">ProveedorID:</label>
+            <input type="text" id="ProveedorID" name="ProveedorID" required>
+            <label for="NombreProveedor">NombreProveedor:</label>
+            <input type="text" required id="NombreProveedor" name="NombreProveedor" >
+            <label for="telefono">Telefono:</label >
+            <input type="text" id="telefono" required name="telefono" >
+            <button type="submit">agregar proveedor</button>
+        </form>
+    </div>
+
+    
+</div>
+
+
+</body>
+</html>
