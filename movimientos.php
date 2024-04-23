@@ -30,7 +30,6 @@
 
             <label for="producto_id">Producto:</label>
             <select name="producto_id" required>
-                <!-- PHP para cargar productos desde la base de datos -->
                 <?php
                 $servername = "localhost";
                 $username = "root";

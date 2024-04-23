@@ -43,7 +43,6 @@
     
 
     <div class="container">
-        <!-- Formulario para agregar productos -->
         <div class="add-product-form">
             <h2>Agregar Nuevo Producto</h2>
             <form id="addProductForm" action="procesar_insercion.php" method="post">
@@ -71,8 +70,6 @@
             <br>
             <br>
         </div>
-
-        
     </div>
 
     <footer>

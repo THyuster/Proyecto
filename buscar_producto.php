@@ -3,29 +3,21 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "telecominventario";
-
-// Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Verificar conexión
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
 if (isset($_GET['productoID'])) {
     $productoID = $_GET['productoID'];
-
-    // Consulta preparada para evitar inyección de SQL
     $sql = "SELECT ProductoID, Nombre, Precio, StockActual, StockMinimo, ProveedorID FROM productos WHERE ProductoID = ?";
     $stmt = $conn->prepare($sql);
     
-    // Vincular parámetros
     $stmt->bind_param("i", $productoID);
 
-    // Ejecutar consulta
     $stmt->execute();
 
-    // Obtener resultados
     $result = $stmt->get_result();
 } else {
     $sql = "SELECT ProductoID, Nombre, Precio, StockActual, StockMinimo, ProveedorID FROM productos";
@@ -38,7 +30,6 @@ if ($result) {
         while ($row = $result->fetch_assoc()) {
             echo "<tr><td>" . $row["ProductoID"]. "</td><td>" . $row["Nombre"]. "</td><td>" . $row["Precio"]. "</td><td>";
 
-            // Mostrar cantidad y stock mínimo y agregar símbolo de exclamación si la cantidad es menor o igual al stock mínimo
             if ($row["StockActual"] <= $row["StockMinimo"]) {
                 echo "<span class='alert-icon'>!</span> ";
             }
@@ -54,7 +45,6 @@ if ($result) {
     echo "Error en la consulta: " . $conn->error;
 }
 
-// Cerrar conexiones
 if (isset($stmt)) {
     $stmt->close();
 }

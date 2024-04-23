@@ -4,28 +4,18 @@ $username = "root";
 $password = "";
 $dbname = "telecominventario";
 
-// Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Verificar conexión
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
 if (isset($_GET['productoID'])) {
     $productoID = $_GET['productoID'];
-
-    // Consulta preparada para evitar inyección de SQL
     $sql = "SELECT ProductoID, Nombre, Precio, StockActual, StockMinimo FROM productos WHERE ProductoID = ?";
     $stmt = $conn->prepare($sql);
-    
-    // Vincular parámetros
     $stmt->bind_param("i", $productoID);
-
-    // Ejecutar consulta
     $stmt->execute();
-
-    // Obtener resultados
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
@@ -34,8 +24,8 @@ if (isset($_GET['productoID'])) {
         <head>
         <style>
         body {
-            background-color: #f2f2f2; /* Cambia el color de fondo a un gris más claro */
-            color: #333; /* Cambia el color del texto a un tono más oscuro */
+            background-color: #f2f2f2; 
+            color: #333;
             font-family: Arial, sans-serif;
             display: flex;
             align-items: center;
@@ -117,7 +107,6 @@ if (isset($_GET['productoID'])) {
     echo "Error: No se proporcionó un ID de producto";
 }
 
-// Cerrar conexiones
 if (isset($stmt)) {
     $stmt->close();
 }

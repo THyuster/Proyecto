@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="eliminar.css">
     <title>Ver Productos</title>
     <style>
-        /* Estilos para la tabla */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -55,12 +54,10 @@
     </nav>
     <div class="container">
         <h2>Lista de Productos</h2>
-        <!-- Barra de búsqueda -->
         <form id="searchForm">
             <input type="text" id="searchInput" placeholder="Buscar producto...">
             <button type="submit">Buscar</button>
         </form> 
-        <!-- Aquí se mostrará la lista de productos -->
         <div id="productList">
             <?php
             $servername = "localhost";
@@ -68,10 +65,8 @@
             $password = "";
             $dbname = "telecominventario";
 
-            // Crear conexión
             $conn = new mysqli($servername, $username, $password, $dbname);
 
-            // Verificar conexión
             if ($conn->connect_error) {
                 die("Conexión fallida: " . $conn->connect_error);
             }
@@ -81,11 +76,10 @@
 
             if ($result->num_rows > 0) {
                 echo "<table><tr><th>ID</th><th>Nombre</th><th>Precio</th><th>Cantidad</th><th>Stock Mínimo</th></tr>";
-                // Mostrar datos de cada fila
+
                 while($row = $result->fetch_assoc()) {
                     echo "<tr><td>" . $row["ProductoID"]. "</td><td>" . $row["Nombre"]. "</td><td>" . $row["Precio"]. "</td><td>";
 
-                    // Mostrar cantidad y stock mínimo y agregar símbolo de exclamación si la cantidad es menor o igual al stock mínimo
                     if ($row["StockActual"] <= $row["StockMinimo"]) {
                         echo "<span class='alert-icon' onclick='showAlert(\"" . $row["Nombre"] . "\")'>!</span> ";
                     }
